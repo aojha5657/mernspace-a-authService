@@ -1,19 +1,25 @@
 {
   "name": "auth-service",
   "version": "1.0.0",
-  "description": "user management services",
+  "description": "User management services",
   "main": "index.js",
   "scripts": {
-    "format:fix":"prettier . --write",
-    "format:check":"prettier . --check",
-    "dev": "node .src/server.js",
+    "format:fix": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Anurag ojha <anuragojha497@gmail.com>",
+  "author": "Anurag Ojha <anuragojha497@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.28.0",
     "@types/node": "^22.15.30",
-    "prettier": "3.5.3",
-    "typescript": "^5.8.3"
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
   }
 }
