@@ -37,6 +37,7 @@ export default [
         rules: {
             'no-console': 'off',
             'dot-notation': ['error', { allowKeywords: true }],
+            '@typescript-eslint/no-misused-promises': 'off',
         },
     },
 ]
