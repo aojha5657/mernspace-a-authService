@@ -12,7 +12,7 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 // Global Error Handler
- 
+
 app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
     logger.error(err.message)
 
