@@ -1,23 +1,22 @@
+import 'reflect-metadata'
+
 import express, { NextFunction, Request, Response } from 'express'
 import logger from './config/logger'
-import createHttpError, { HttpError } from 'http-errors'
+import { HttpError } from 'http-errors'
+import authRouter from './routes/auth'
 
 const app = express()
 
-// Route Handler
-app.get('/', (req: Request, res: Response) => {
-    const err = createHttpError(401, 'You can not access this route.')
-    throw err
-    res.send('Welcome to auth service')
+app.get('/', async (req, res) => {
+    res.send('Welcome to Auth service')
 })
 
-// Global Error Handler
+app.use('/auth', authRouter)
 
+ 
 app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
     logger.error(err.message)
-
     const statusCode = err.statusCode || 500
-
     res.status(statusCode).json({
         errors: [
             {
