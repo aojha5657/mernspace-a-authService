@@ -22,9 +22,9 @@ describe('POST /auth/register', () => {
         it('should return valid json response', async () => {
             // Arrange
             const userData = {
-                firstName: 'Rakesh',
+                firstName: 'anurag',
                 lastName: 'K',
-                email: 'rakesh@mern.space',
+                email: 'anurag@mern.space',
                 password: 'secret',
             }
             // Act
